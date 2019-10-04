@@ -1,0 +1,45 @@
+{
+  "name": "react-stative",
+  "version": "0.0.1",
+  "description": "A React.js plugin to use stative.",
+  "source": "src/index.js",
+  "main": "dist/react-stative.js",
+  "module": "dist/react-stative.m.js",
+  "unpkg": "dist/react-stative.umd.js",
+  "scripts": {
+    "test": "Echo 'no tests implemented yet'",
+    "build": "microbundle build",
+    "dev": "microbundle watch",
+    "prepublishOnly": "npm run build",
+    "release": "np"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stativejs/react-stative.git"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "microbundle": "^0.11.0",
+    "np": "^5.1.0",
+    "stative": "^0.1.13",
+    "react": "^16.10.2"
+  },
+  "dependencies": {
+    "object-path": "^0.11.4"
+  },
+  "peerDependencies": {
+    "stative": "^0.1.13",
+    "react": "^16.10.2"
+  },
+  "files": [
+    "/dist"
+  ],
+  "author": "Alan Castro <alandecastros@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stativejs/react-stative/issues"
+  },
+  "homepage": "https://github.com/stativejs/react-stative#readme"
+}
