@@ -1,6 +1,6 @@
 {
   "name": "react-stative",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React.js plugin to use stative.",
   "source": "src/index.js",
   "main": "dist/react-stative.js",
