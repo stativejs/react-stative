@@ -13,10 +13,7 @@
     "prepublishOnly": "npm run build",
     "release": "np"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/stativejs/react-stative.git"
-  },
+  "repository": "stativejs/react-stative",
   "devDependencies": {
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -38,9 +35,5 @@
     "/dist"
   ],
   "author": "Alan Castro <alandecastros@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stativejs/react-stative/issues"
-  },
-  "homepage": "https://github.com/stativejs/react-stative#readme"
+  "license": "MIT"
 }
