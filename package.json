@@ -8,18 +8,14 @@
   "unpkg": "dist/react-stative.umd.js",
   "scripts": {
     "test": "Echo 'no tests implemented yet'",
-    "build": "microbundle build",
+    "build": "microbundle build --jsx React.createElement",
     "dev": "microbundle watch",
     "prepublishOnly": "npm run build",
-    "release": "np"
+    "release": "np --yolo"
   },
   "repository": "stativejs/react-stative",
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.0-next.6",
     "np": "^5.1.0",
     "react": "^16.10.2",
     "stative": "^1.0.0"
