@@ -16,7 +16,7 @@ export default function subscribeTo(WrappedComponent, paths) {
       }
 
       if (typeof paths === 'string' && paths === '*') {
-        const subscription = state.subscribe((newState) => {
+        const subscription = state.subscribe(newState => {
           this.setState({ ...newState });
         });
         this.subscriptions.push(subscription);
@@ -24,8 +24,8 @@ export default function subscribeTo(WrappedComponent, paths) {
       }
 
       if (paths instanceof Array) {
-        paths.forEach((path) => {
-          const subscription = state.subscribe(path, (newValue) => {
+        paths.forEach(path => {
+          const subscription = state.subscribe(path, newValue => {
             const obj = {};
             objectPath.set(obj, path, newValue);
             const newState = { ...state.get(), ...obj };
@@ -37,7 +37,7 @@ export default function subscribeTo(WrappedComponent, paths) {
     }
 
     componentWillUnmount() {
-      this.subscriptions.forEach((subscription) => subscription.unsubscribe());
+      this.subscriptions.forEach(subscription => subscription.unsubscribe());
     }
 
     render() {
