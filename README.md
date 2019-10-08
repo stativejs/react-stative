@@ -34,30 +34,23 @@ ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
 ```
 
-Create your components extending StativeComponent class and subscribe to any part of the state you want.
+Create your components using `subscribeTo` high order component.
 
 ```react
-import StativeComponent from 'react-stative';
 import React from 'react';
+import subscribeTo from './react-stative';
 
-class Square extends StativeComponent {
-  constructor(props) {
-    super({
-      props,
-      subscribeTo: ['counterC'] // this component will only listen when the property counterC changes.
-    })
-  }
-
+class Square extends React.Component {
   render() {
     return (
       <h1>
-        {this.state.counterA} /
-        {this.state.counterB} / 
-        {this.state.counterC}
+        {this.props.counterA} - 
+        {this.props.counterB} - 
+        {this.props.counterC}
       </h1>
     );
   }
 }
 
-export default Square;
+export default subscribeTo(Square, ['counterB']);
 ```

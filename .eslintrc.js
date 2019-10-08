@@ -6,10 +6,14 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint',
     // specifying a module sourcetype prevent eslint from marking import statements as errors
-    sourceType: 'module',
+    sourceType: 'module'
   },
+  'plugins': [
+    'jsx-a11y'
+  ],
   extends: [
     'airbnb-base',
+    'plugin:jsx-a11y/recommended'
   ], // activate vue related rules
   rules: {
     'comma-dangle': 'off',

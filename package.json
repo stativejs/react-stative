@@ -18,19 +18,20 @@
     "url": "git+https://github.com/stativejs/react-stative.git"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
+    "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "microbundle": "^0.11.0",
     "np": "^5.1.0",
-    "stative": "^0.1.13",
-    "react": "^16.10.2"
+    "react": "^16.10.2",
+    "stative": "^1.0.0"
   },
   "dependencies": {
     "object-path": "^0.11.4"
   },
   "peerDependencies": {
-    "stative": "^0.1.13",
+    "stative": "^1.0.0",
     "react": "^16.10.2"
   },
   "files": [
