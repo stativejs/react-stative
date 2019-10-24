@@ -1,5 +1,7 @@
 # react-stative
 
+[![NPM version](https://badge.fury.io/js/react-stative.svg)](http://badge.fury.io/js/react-stative)
+
 React.js plugin to use [stative](https://github.com/stativejs/stative).
 
 ### Installation
