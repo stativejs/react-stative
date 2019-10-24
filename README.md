@@ -1,6 +1,6 @@
 # react-stative
 
-React.js plugin to use stative.
+React.js plugin to use [stative](https://github.com/stativejs/stative).
 
 ### Installation
 
@@ -10,16 +10,13 @@ npm install react-stative stative react
 
 ### Usage
 
-Set your initial state at index.js of your React project.
-
-```ts
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import state from 'stative';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
+// your app initial state
 state.set({
   counterA: 0,
   counterB: 100,
@@ -27,30 +24,86 @@ state.set({
 });
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
 ```
 
-Create your components using `subscribeTo` high order component.
+Create your components using `subscribeTo` high order component and listen to every state change
 
-```react
+```jsx
 import React from 'react';
-import subscribeTo from './react-stative';
+import state from 'stative';
+import subscribeTo from 'react-stative';
 
 class Square extends React.Component {
+  incrementA() {
+    state.set('counterA', counter => counter + 1);
+  }
+
+  incrementB() {
+    state.set('counterB', counter => counter + 1);
+  }
+
+  incrementC() {
+    state.set('counterC', counter => counter + 1);
+  }
+
   render() {
     return (
-      <h1>
-        {this.props.counterA} - 
-        {this.props.counterB} - 
-        {this.props.counterC}
-      </h1>
+      <div>
+        <h1>
+          {this.props.counterA} - 
+          {this.props.counterB} - 
+          {this.props.counterC}
+        </h1>
+
+        <button onClick={this.incrementA}>Update A</button>
+        <button onClick={this.incrementB}>Update B</button>
+        <button onClick={this.incrementC}>Update C</button>        
+      </div>
     );
   }
 }
 
-export default subscribeTo(Square, ['counterB']);
+export default subscribeTo(Square, '*');
 ```
+
+Or just to some part of it
+
+```jsx
+import React from 'react';
+import state from 'stative';
+import subscribeTo from 'react-stative';
+
+class Circle extends React.Component {
+  incrementA() {
+    state.set('counterA', counter => counter + 1);
+  }
+
+  incrementB() {
+    state.set('counterB', counter => counter + 1);
+  }
+
+  incrementC() {
+    state.set('counterC', counter => counter + 1);
+  }
+  
+  render() {
+    return (
+      <div>
+        <h1>
+          {this.props.counterA} - 
+          {this.props.counterB} - 
+          {this.props.counterC}
+        </h1>
+
+        <button onClick={this.incrementA}>Update A</button>
+        <button onClick={this.incrementB}>Update B</button>
+        <button onClick={this.incrementC}>Update C</button>        
+      </div>
+    );
+  }
+}
+
+export default subscribeTo(Circle, ['counterA']);
+```
+
+Enjoy!
