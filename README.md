@@ -108,4 +108,6 @@ class Circle extends React.Component {
 export default subscribeTo(Circle, ['counterA']);
 ```
 
+Checkout the [example app](https://github.com/stativejs/react-stative-example).
+
 Enjoy!
