@@ -1,3 +1,7 @@
+# Deprecated!
+
+As of Sept 15th 2020, react-stative is fully deprecated.
+
 # react-stative
 
 [![NPM version](https://badge.fury.io/js/react-stative.svg)](http://badge.fury.io/js/react-stative)
